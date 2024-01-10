@@ -36,6 +36,6 @@ const monitorAPI = async () => {
     }
 };
 
-setInterval(monitorAPI, 5000);
+setInterval(monitorAPI, 20000);
 
 monitorAPI();
