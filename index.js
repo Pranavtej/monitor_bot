@@ -10,8 +10,9 @@ const bot = new TelegramBot(botToken, { polling: true });
 
 
 const sendMessage = (message) => {
-    bot.sendMessage(chatId, message);
+    bot.sendMessage(chatId, `*${message}*`, { parse_mode: 'MarkdownV2' });
 };
+
 
 
 const monitorAPI = async () => {
@@ -20,8 +21,9 @@ const monitorAPI = async () => {
     try {
         const response = await axios.get(apiEndpoint);
         console.log(response.data.data.descendants);
-        console.log('API is working fine')
-        const errorMessage = `⚠️⚠️Warning Desecndants: ${response.data.data.descendants}`;
+        console.log('✅ Bot running...')
+        const errorMessage = `⚠️⚠️ Warning Desecndants: ${response.data.data.descendants}
+        `;
         sendMessage(errorMessage);
         
         // if (response.data.data.descendants >13 && response.data.data.descendants < 18) {
