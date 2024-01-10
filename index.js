@@ -11,9 +11,6 @@ const bot = new TelegramBot(botToken, { polling: true });
 
 const sendMessage = (message) => {
     bot.sendMessage(chatId, message);
-    bot.launch().then(() => {   
-        bot.sendMessage(chatId, message);   
-    });
 };
 
 
