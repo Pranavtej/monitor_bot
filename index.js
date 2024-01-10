@@ -22,7 +22,7 @@ const monitorAPI = async () => {
         console.log(response.data.data.descendants);
         console.log('API is working fine')
         
-        if (response.data.data.descendants <= 18) {
+        if (response.data.data.descendants >13) {
            
             const errorMessage = `⚠️⚠️Warning Desecndants: ${response.data.data.descendants}`;
             sendMessage(errorMessage);
