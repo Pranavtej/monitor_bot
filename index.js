@@ -19,6 +19,8 @@ const monitorAPI = async () => {
 
     try {
         const response = await axios.get(apiEndpoint);
+        console.log(response.data.data.descendants);
+        console.log('API is working fine')
         
         if (response.data.data.descendants > 13) {
            
