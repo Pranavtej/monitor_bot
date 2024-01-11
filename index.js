@@ -1,6 +1,13 @@
 const axios = require('axios');
 const TelegramBot = require('node-telegram-bot-api');
+const express = require('express');
+const app = express();
+const port = 3000;
+app.get('/', (req, res) => res.send('Monitor Bot 🙃!'));
+app.listen(port, () => console.log(`App is Running`));
+
 require('dotenv').config();
+
 
 const botToken = process.env.BOT_TOKEN;
 const botToken1 = process.env.BOT_TOKEN_1;
@@ -49,3 +56,5 @@ const monitorAPI = async () => {
 setInterval(monitorAPI, 5000);
 
 monitorAPI();
+
+
